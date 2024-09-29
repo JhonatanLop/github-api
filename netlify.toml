@@ -1,0 +1,13 @@
+[build]
+    publish = "/dist"
+    command = "npm run build"
+
+[context.production]
+    branch = "main"
+    [context.production.environment]
+        HUGO_ENV = "production"
+
+[context.deploy-preview]
+    branch = "dev"
+    [context.deploy-preview.environment]
+        HUGO_ENV = "development"
